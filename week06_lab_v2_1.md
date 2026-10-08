@@ -235,9 +235,8 @@ class WeatherService {
 
 > ✅ **Checkpoint 2.2** บันทึกผลการตรวจสอบ `statusCode` อย่างน้อย 2 กรณี (สำเร็จ และ 404) ตามเกณฑ์ข้างต้น
 
-```text
-บันทึกรูปและคำตอบที่นี่
-```
+<img width="943" height="146" alt="ภาพถ่ายหน้าจอ 2569-10-09 เวลา 04 40 23" src="https://github.com/user-attachments/assets/7606cba5-3578-4361-87da-59fc8c0c78bd" />
+
 
 ### ขั้นตอนที่ 2.4 — 🧠 คิดเอง/ออกแบบเอง
 
@@ -354,9 +353,9 @@ class MyApp extends StatelessWidget {
 
 > ✅ **Checkpoint 2.3** รันแอปแล้วทดสอบทั้ง 3 สถานการณ์ คือ (1) ค้นหาเมืองที่มีจริง (2) ค้นหาเมืองที่ไม่มีอยู่จริง (3) ปิด Wi-Fi/Data บนเครื่องแล้วลองค้นหา ถ่ายภาพหน้าจอทั้ง 3 กรณี
 
-```text
-บันทึกรูปที่นี่
-```
+<img width="1189" height="940" alt="ภาพถ่ายหน้าจอ 2569-10-09 เวลา 04 55 43" src="https://github.com/user-attachments/assets/74f34ca1-f2ca-4604-8f6b-0d5955958d3d" /><img width="1202" height="942" alt="ภาพถ่ายหน้าจอ 2569-10-09 เวลา 04 53 50" src="https://github.com/user-attachments/assets/4c031387-4655-4bb0-8dc7-7e87d58aef48" />
+<img width="1187" height="938" alt="ภาพถ่ายหน้าจอ 2569-10-09 เวลา 04 55 05" src="https://github.com/user-attachments/assets/a6e26631-7396-4a5c-8990-39fe28118b4b" />
+
 
 ---
 
