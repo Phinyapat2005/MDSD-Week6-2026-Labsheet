@@ -404,9 +404,8 @@ ElevatedButton(
 จากนั้นรันแอป กดปุ่มนี้ แล้วดูผลลัพธ์ใน Debug Console (ปุ่มนี้เป็นแค่ปุ่มทดลองชั่วคราว ไม่ต้องมีการจัดการ Loading/Error ใด ๆ ต่างจากปุ่ม "ค้นหา" หลักของหน้า)
 
 > ✅ **Checkpoint 3.1** ถ่ายภาพหน้าจอ Debug Console ที่แสดง Status Code (ควรเป็น `201 Created`) พร้อม Response Body 
-```text
-บันทึกรูปและคำตอบที่นี่
-```
+<img width="1305" height="282" alt="ภาพถ่ายหน้าจอ 2569-10-09 เวลา 05 13 55" src="https://github.com/user-attachments/assets/9ca2cf0a-0654-45e0-9ad8-7f59b5b4b0bb" /><img width="1192" height="945" alt="ภาพถ่ายหน้าจอ 2569-10-09 เวลา 05 14 02" src="https://github.com/user-attachments/assets/23d293d3-eaae-46a6-aad5-1534bdaa3386" />
+
 
 ### ขั้นตอนที่ 3.2 — 🧠 คิดเอง/ออกแบบเอง
 
