@@ -429,10 +429,8 @@ Future<void> updateDemoPost() async {
 ```
 
 > ✅ **Checkpoint 3.2** ถ่ายภาพหน้าจอ Debug Console ที่แสดง Status Code ของการเรียก PUT (ควรเป็น `200 OK`) 
+<img width="1297" height="295" alt="ภาพถ่ายหน้าจอ 2569-10-09 เวลา 05 27 00" src="https://github.com/user-attachments/assets/97d1f675-2f94-4dc8-872a-aee2d1504850" /><img width="1195" height="940" alt="ภาพถ่ายหน้าจอ 2569-10-09 เวลา 05 27 07" src="https://github.com/user-attachments/assets/013b8e0e-305c-45d3-9a4b-03314c5ea1dc" />
 
-```text
-บันทึกรูปและคำตอบที่นี่
-```
 ---
 
 ## ส่วนที่ 4: ใช้ AI ช่วย Generate โค้ด API Client
