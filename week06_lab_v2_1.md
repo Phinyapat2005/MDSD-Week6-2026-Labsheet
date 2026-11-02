@@ -566,13 +566,36 @@ Future<Weather> fetchWeatherWithDio(String city) async {
 > ✅ **Checkpoint 5.2** เปรียบเทียบสั้น ๆ ระหว่าง `http` กับ `dio` อย่างน้อย 3 ประเด็น โดยอ้างอิงจากสิ่งที่สังเกตได้จริงตอนทดลองในขั้นตอนที่ 5.3 เช่น การแปลง JSON อัตโนมัติ, การกำหนด Query Parameters, และรูปแบบการจัดการ Exception (`DioException` เทียบกับการดักจับหลายชนิดแยกกันแบบ `http`)
 
 ```text
-บันทึกคำตอบที่นี่
+การแปลงข้อมูล JSON (JSON Parsing):
+http: ต้องแปลงข้อมูล JSON String ด้วย jsonDecode(response.body) เองก่อนนำไปใช้งาน
+dio: แปลงข้อมูล JSON เป็น Map หรือ List ให้โดยอัตโนมัติผ่าน response.data
+การกำหนด Query Parameters:
+http: ต้องต่อพารามิเตอร์เป็น String ใน URL เอง หรือต้องใช้ Uri.https() ซึ่งซับซ้อนกว่า
+dio: รองรับการส่ง Map ผ่านตัวแปร queryParameters ได้โดยตรง อ่านง่ายและเป็นระเบียบกว่า
+การจัดการ Exception (Error Handling):
+http: ไม่มีคลาสข้อผิดพลาดหลักตัวเดียว ต้องแยกดักจับหลายคลาส เช่น TimeoutException, ClientException, FormatException
+dio: รวบรวม Exception เกี่ยวกับเครือข่ายไว้ภายใต้คลาสเดียวคือ DioException แล้วเช็กประเภทผ่าน e.type เช่น connectionTimeout, badResponse, connectionError ได้ทันที
 ```
 >
 > ✅ **Checkpoint 5.3** แสดงโค้ดเงื่อนไข `DioExceptionType` เพิ่มเติมที่เขียนเองในขั้นตอนที่ 5.4 
 
 ```text
-บันทึกคำตอบที่นี่
+} on DioException catch (e) {
+  if (e.type == DioExceptionType.connectionTimeout) {
+    throw Exception('การเชื่อมต่อหมดเวลา กรุณาลองใหม่อีกครั้ง');
+  } else if (e.type == DioExceptionType.badResponse) {
+    // ตัวอย่าง: เซิร์ฟเวอร์ตอบกลับมาแล้วแต่ status code ผิดพลาด (เช่น 404, 500)
+    throw Exception('เซิร์ฟเวอร์ตอบกลับผิดพลาด (${e.response?.statusCode})');
+  } else if (e.type == DioExceptionType.receiveTimeout) {
+    // ดักจับกรณีที่ส่งคำขอไปสำเร็จแล้ว แต่เซิร์ฟเวอร์ใช้เวลาส่งข้อมูลกลับมานานเกินกำหนด
+    throw Exception('การรับข้อมูลจากเซิร์ฟเวอร์ใช้เวลานานเกินไป');
+  } else if (e.type == DioExceptionType.connectionError) {
+    // ดักจับกรณีไม่มีสัญญาณอินเทอร์เน็ต โดนบล็อก หรือไม่สามารถเปิด socket เชื่อมต่อไปยังเซิร์ฟเวอร์ได้
+    throw Exception('ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ กรุณาตรวจสอบอินเทอร์เน็ต');
+  } else {
+    throw Exception('เกิดข้อผิดพลาด: ${e.message}');
+  }
+}
 ```
 ---
 
